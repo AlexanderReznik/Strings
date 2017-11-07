@@ -188,6 +188,7 @@ namespace CsvParserApp
                 {
                     var movieRaiting = new MovieRating() { Rating = r.Rating, RateDate = r.RateDate, UserId = r.User.Id };
                     users.Find(u => u.Id == r.User.Id).RatedMovies.Add(xmlMovie.Id);
+                    xmlMovie.Ratings.Add(movieRaiting);
                 }
 
                 movies.Add(xmlMovie);
